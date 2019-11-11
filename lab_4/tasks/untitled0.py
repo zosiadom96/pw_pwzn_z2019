@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Oct 25 09:10:13 2019
+
+@author: zofiadomanowska
+"""
+
 """
 Część 1 (1 pkt): Uzupełnij klasę Calculator
 tak by obsługiwała podstawowe operacje (podane jako string)
@@ -14,13 +22,12 @@ class Calculator:
         # Podpowiedz: użyj atrybutu do przechowywania wyniku
         # ostatniej wykonanej operacji, tak by metoda memorize przypisywała
         # wynik zapisany w tym atrybucie
-        #sprawdzam czy dziala
+        #slownik z operatorami
         self._short_memory = None
 
     def run(self, operator, arg1, arg2):
         """
         Returns result of given operation.
-
         :param operator: sign of operation to perform
         :type operator: str
         :param arg1: first argument, must be a numeric value
