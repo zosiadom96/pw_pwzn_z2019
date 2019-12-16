@@ -9,7 +9,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
 
-<title>Lecture_1_part_2 slides</title>
+<title>Lecture_9 slides</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13202,23 +13202,86 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Python-w-zastosowaniach-naukowych">Python w zastosowaniach naukowych<a class="anchor-link" href="#Python-w-zastosowaniach-naukowych">&#182;</a></h1><h2 id="Wyk&#322;ad-1-cz.-2">Wyk&#322;ad 1 cz. 2<a class="anchor-link" href="#Wyk&#322;ad-1-cz.-2">&#182;</a></h2><h3 id="mgr-in&#380;.-Maciej-Kwiatkowski">mgr in&#380;. Maciej Kwiatkowski<a class="anchor-link" href="#mgr-in&#380;.-Maciej-Kwiatkowski">&#182;</a></h3>
+<h1 id="Python-w-zastosowaniach-naukowych">Python w zastosowaniach naukowych<a class="anchor-link" href="#Python-w-zastosowaniach-naukowych">&#182;</a></h1><h2 id="Wyk&#322;ad-9">Wyk&#322;ad 9<a class="anchor-link" href="#Wyk&#322;ad-9">&#182;</a></h2><h3 id="mgr-in&#380;.-Maciej-Kwiatkowski">mgr in&#380;. Maciej Kwiatkowski<a class="anchor-link" href="#mgr-in&#380;.-Maciej-Kwiatkowski">&#182;</a></h3>
 </div>
 </div>
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Repozytorium-kodu">Repozytorium kodu<a class="anchor-link" href="#Repozytorium-kodu">&#182;</a></h1>
+<h1 id="Interfejs-graficzny">Interfejs graficzny<a class="anchor-link" href="#Interfejs-graficzny">&#182;</a></h1>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Aplikacja">Aplikacja<a class="anchor-link" href="#Aplikacja">&#182;</a></h2>
 </div>
 </div>
 </div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<blockquote><p>Repozytorium (łac. repositorium) – miejsce uporządkowanego przechowywania dokumentów, z których wszystkie przeznaczone są do udostępniania.</p>
-</blockquote>
-<p>za: <a href="https://pl.wikipedia.org/wiki/Repozytorium">https://pl.wikipedia.org/wiki/Repozytorium</a></p>
+<p><strong>Aplikacja</strong> to samodzielny program służący do realizowania konkretnego zadania.</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Aplikację można podzielić (zgrubnie) na dwie warstwy:</p>
+<ul>
+<li>komunikację z użytkownikiem (interfejs, <em>frontend</em>),</li>
+<li>przetwarzanie informacji (logikę, <em>backend</em>).</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Implementacja warstw nie powinna być od siebie zależna</strong> 
+tzn. metody i atrybuty związane z wyświetlaniem nie powinny być umieszczone w logice i odwrotnie.</p>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="MVC">MVC<a class="anchor-link" href="#MVC">&#182;</a></h3>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>MVC</strong> (<em>Model - View - Controler</em>) to wzorzec architektoniczny zakładający podział aplikacji na 3 częsci:</p>
+<ul>
+<li><strong>Model</strong> - reprezentujący dane obsługiwane w programie. Model może być:<ul>
+<li><em>pasywny</em> - dane zmieniane są na skutek akcji kontrolera,</li>
+<li><em>aktywny</em> - dane przechowywane w modelu mogą się zmienić niezależnie od działania użytkownika, co powoduję komunikację z odpowiednim kontrolerem,</li>
+</ul>
+</li>
+<li><strong>Widok</strong> - odpowiedzialny za prezentację danych, może zmieniać stan modelu w zakresie związanym z prezentacją (ale nie dane). Może składać się z podwidoków.</li>
+<li><strong>Kontroler</strong> - odpowiedzialny za odbiór, przetworzenie i analizę danych wejściowych. Zależnie od danych wejściowych kontroler może:<ul>
+<li>zmienić stan modelu,</li>
+<li>odświeżyć widok,</li>
+<li>przełączyć sterowanie na inny kontroler.</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Każda z częsci reprezentowana jest jako oddzielny obiekt, więc dostarcza swój interfejs. Oznacza to, że w klasie modelu powinniśmy mieć metody interakcji z danymi, ale publiczne metody modelu nie są wywoływane.</p>
 
 </div>
 </div>
@@ -13226,10 +13289,73 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="GUI">GUI<a class="anchor-link" href="#GUI">&#182;</a></h2>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>GUI</strong> (<em>Graphical User Interface</em>) to określenie sposobu prezentacji informacji przez komputer oraz interakcji z użytkownikiem, polegającego na rysowaniu i obsługiwaniu widżetów (<em>widgets</em>).</p>
+<p>Innymi słowy są to wszystkie aplikacje okienkowe, w których wszystko można “wyklikać”.</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Z UI wiąże się jeszcze pojęcie <strong>UX</strong> (<em>User eXpreience</em>), czyli czytelności (wiem co), przejrzystości (wiem gdzie) i intuicyjności (wiem jak) interfejsu.</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Dobry UX można streścić do stwierdzenia: "Dobry interfejs jest jak dobry żart: nie trzeba go tłumaczyć".</p>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Wid&#380;et">Wid&#380;et<a class="anchor-link" href="#Wid&#380;et">&#182;</a></h3>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Widżet jest elementem GUI umożliwiającym komunikację programu z użytkownikiem.</p>
+<p>Widżetowi przypisuje się pewien prostokąt na ekranie o określonym położeniu i wymiarach (w pikselach).</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Funkcje widżetów:</p>
 <ul>
-<li>W trakcie zajęć korzystać będziemy z repozytorium Git. Jeżeli jeszcze nie mamy go zainstalowanego to proszę o instalację: <a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></li>
-<li>Jest to bezpłatny system kontroli wersji o otwartych źródłach (ang. version control system, VCS) działający zarówno lokalnie, jak i pozwalający na dzielenie się kodem.</li>
-<li>Platformą hostującą zdalne repozytorium będzie GitHub - proszę sobie tam założyć konto: <a href="https://github.com/">https://github.com/</a></li>
+<li>przekazywanie do programu danych lub poleceń użytkownika (<strong>wejścia</strong>),</li>
+<li>wizualizacja danych lub informacji o stanie programu (<strong>wyjścia</strong>),</li>
+<li>zarządzanie innymi widżetami (<strong>widżety pojemnikowe</strong>).</li>
+</ul>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>Wejścia</strong>: przycisk (<em>button</em>), wejście tekstowe/linijka
+(<em>entry</em>), pole tekstowe (<em>text</em>), przycisk wyboru (<em>checkbox</em>), przycisk wyłącznego wyboru (<em>radio button</em>),</li>
+<li><strong>Wyjścia</strong>: etykieta (<em>label</em>), pasek postępu (<em>progress bar</em>), okienko wiadomości (<em>message box</em>),</li>
+<li><strong>Wejścia-wyjścia</strong>: lista wyboru (<em>listbox</em>), płótno (<em>canvas</em>), okienko dialogowe (<em>dialogue box</em>), suwak (<em>scrollbar</em>).</li>
+<li><strong>Pojemniki</strong>: ramka (<em>frame</em>), okienko (<em>top level</em>), menu (<em>menu</em>).</li>
 </ul>
 
 </div>
@@ -13238,16 +13364,257 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Podstawowe komendy:</p>
+<h2 id="Tkinter">Tkinter<a class="anchor-link" href="#Tkinter">&#182;</a></h2>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Biblioteka widzetów <strong>Tk</strong> wywodzi się z języka <strong>Tool Command Language (Tcl)</strong> stworzonego w w późnych latach 80 ubiegłego wieku przez Johna Ousterhout na uniwerytecie Berkeley. Pierwotnie stworzona na pratformie Unix dzięki swojej prostocie została spopularyzowana na pozostałem duże platformy (macOS i Windows).</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Tkinter</strong> jest modułem zawierającym interfejs do biblioteki Tk. Do jego głównych zalet należą:</p>
 <ul>
-<li><code>git clone https://...</code> - skopiowanie (klonowanie) zdalnego repo lokalnie</li>
-<li><code>git init</code> - zainicjowanie nowego lokalnego repozytorium</li>
-<li><code>git pull</code> - pobranie zmian ze zdalnego repo</li>
-<li><code>git add</code> - dodanie plików do śledzenia przez repozytorium</li>
-<li><code>git commit</code> - utworzenie wpisu w repozytorium</li>
-<li><code>git push</code> - wysłanie wpisu na zdalne repo</li>
-<li><code>git status</code> - sprawdzenie stanu repozytorium</li>
-<li><code>git log</code> - podgląd repozytorium</li>
+<li>jest biblioteką standardową,</li>
+<li>jest stabilny - API nie podlega częstym zmianom,</li>
+<li>dostarcza narzędzia tylko do tworzenia GUI - zarządzanie wątkami, systemem plików etc. może być zrealizowane w dowolny sposób,</li>
+<li>jest prosty - znając podstawy programowania obiektowego można stworzyć rozbudowane GUI.</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Przyk&#322;ady">Przyk&#322;ady<a class="anchor-link" href="#Przyk&#322;ady">&#182;</a></h3>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Demo wbudowane w moduł</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>%%bash
+python -m tkinter
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">tkinter</span> <span class="k">as</span> <span class="nn">tk</span>
+
+<span class="c1"># definicja pojedynczego pojemnika</span>
+<span class="k">class</span> <span class="nc">DestroyableFrame</span><span class="p">(</span><span class="n">tk</span><span class="o">.</span><span class="n">Frame</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">master</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">master</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span> <span class="c1"># umiejscowienie widżetu</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">createWidgets</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">createWidgets</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">quitButton</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span> 
+            <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Quit&#39;</span><span class="p">,</span>
+            <span class="n">command</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">destroy</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">quitButton</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">DestroyableFrame</span><span class="p">()</span>  <span class="c1"># instancja aplikacji nie powoduje jej uruchomienia</span>
+<span class="n">app</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Sample application&#39;</span><span class="p">)</span> 
+<span class="n">app</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>  <span class="c1"># dopiero uruchomienie go w pętli pozwala oknu się pojawić</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Na powyższym przykładzie można zobaczyć schemat tworzenia zbiornika w Tkinterze. Składa się on z:</p>
+<ul>
+<li>Obowiązkwo:<ul>
+<li>zdefiniowania pojemnika </li>
+<li>narysowania pojemnika (tu metoda <code>grid</code>)</li>
+</ul>
+</li>
+<li>Dodatkowo:<ul>
+<li>dodanie widżetów dzieci</li>
+<li>powiązania widżetów ze sobą</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Tak stworzony zbiornik można albo wykorzystać jako element składowy albo jako samodzielne okno. Jeżeli zdecydujemy się użyć go jako okno ważne jest żeby:</p>
+<ul>
+<li>posiadać referencję do tego obiektu,</li>
+<li>uruchomić go w pętli.</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Dlaczego ważne jest posiadanie referencji do głównego obiektu? Wszystkie pozostałe obiekty znajdujące się wewnątrz widżetu są ze sobą powiązane poprzez relację rodzic-dziecko (odpowiednio atrybuty <code>master</code> i <code>children</code>) dlatego nawet jeżeli nie przypiszemy widżetu do zmiennej to podany przy tworzeniu rodzic (pierwszy parametr konstruktora) będzie przechowywał referencję do widżetu.</p>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Zamkni&#281;cie-okna-a-zamkni&#281;cie-wid&#380;etu">Zamkni&#281;cie okna a zamkni&#281;cie wid&#380;etu<a class="anchor-link" href="#Zamkni&#281;cie-okna-a-zamkni&#281;cie-wid&#380;etu">&#182;</a></h3>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>W poprzednim przykładzie mieliśmy dwie możliwości zamknięcia okna:</p>
+<ul>
+<li>zamknięcie okna na poziomie kernela graficznego (krzyżyk w belce okna),</li>
+<li>zamknięcie za pomocą przycisku wewnątrz okna (przycisk "Quit").</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To druga metoda odwoływała się do rodzica i na nim wywoływała metodę <code>destroy</code>. Co jest w tym przypadku rodzicem? Obiekt ramki. Pytanie czy użycie instancji <code>QuitFrame</code> jako elementu większego okna da podobny efekt?</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">tkinter</span> <span class="k">as</span> <span class="nn">tk</span>
+
+<span class="n">window</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Frame</span><span class="p">()</span>
+<span class="n">window</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">DestroyableFrame</span><span class="p">(</span><span class="n">window</span><span class="p">)</span>
+<span class="n">DestroyableFrame</span><span class="p">(</span><span class="n">window</span><span class="p">)</span>
+<span class="c1"># te komendy tworzą już nowe okno</span>
+<span class="n">window</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+<span class="n">DestroyableFrame</span><span class="p">()</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Zniknęły wszystkie przyciski, ale proces wciąż działał. Wynika to z faktu, że wywołanie pętli wyświetlania tworzy (lub korzysta z instniejącej) instancji obiektu <code>tk.Tk</code>, który jest faktycznym <strong>głównym oknem</strong> aplikacji (powinna stworzona być tylko jedna). Dopiero zniszczenie tego obiektu (metoda <code>destroy</code>) przerywa proces wyświetlania okna.</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Instnieje jeszcze metoda <code>quit</code>, która zawiesza wyświetlanie okna, ale go nie usuwa. Przerwanie wyświetlania powoduje dalsze wykonanie kodu, i wraca do istniejącego okna przy kolejnym uruchomieniu pętli wyświetlania.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">tkinter</span> <span class="k">as</span> <span class="nn">tk</span>
+
+<span class="k">class</span> <span class="nc">QuitFrame</span><span class="p">(</span><span class="n">QuitFrame</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">createWidgets</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">quitButton</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span>
+            <span class="bp">self</span><span class="p">,</span> 
+            <span class="n">text</span><span class="o">=</span><span class="s1">&#39;Quit&#39;</span><span class="p">,</span>
+            <span class="n">command</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">quit</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">quitButton</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">QuitFrame</span><span class="p">()</span>
+<span class="n">app</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Sample application&#39;</span><span class="p">)</span> 
+<span class="n">app</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Kod wykonuje się dalej&#39;</span><span class="p">)</span>
+<span class="n">app</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+<span class="n">app</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">destroy</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Widżet jest elementem GUI umożliwiającym komunikację programu z użytkownikiem.</p>
+<p>Widżetowi przypisuje się pewien prostokąt na ekranie o określonym położeniu i wymiarach (w pikselach).</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Funkcje widżetów:</p>
+<ul>
+<li>przekazywanie do programu danych lub poleceń użytkownika (<strong>wejścia</strong>),</li>
+<li>wizualizacja danych lub informacji o stanie programu (<strong>wyjścia</strong>),</li>
+<li>zarządzanie innymi widżetami (<strong>widżety pojemnikowe</strong>).</li>
+</ul>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><strong>Wejścia</strong>: przycisk (<em>button</em>), wejście tekstowe/linijka
+(<em>entry</em>), pole tekstowe (<em>text</em>), przycisk wyboru (<em>checkbox</em>), przycisk wyłącznego wyboru (<em>radio button</em>),</li>
+<li><strong>Wyjścia</strong>: etykieta (<em>label</em>), pasek postępu (<em>progress bar</em>), okienko wiadomości (<em>message box</em>),</li>
+<li><strong>Wejścia-wyjścia</strong>: lista wyboru (<em>listbox</em>), płótno (<em>canvas</em>), okienko dialogowe (<em>dialogue box</em>), suwak (<em>scrollbar</em>).</li>
+<li><strong>Pojemniki</strong>: ramka (<em>frame</em>), okienko (<em>top level</em>), menu (<em>menu</em>).</li>
 </ul>
 
 </div>
@@ -13256,54 +13623,437 @@ a.anchor-link {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Do samodzielnej nauki:</p>
-<ul>
-<li>Tutorial GitHuba: <a href="https://guides.github.com/introduction/git-handbook/">https://guides.github.com/introduction/git-handbook/</a></li>
-<li>Dokumentacja, video, książka Git Pro: <a href="https://git-scm.com/doc">https://git-scm.com/doc</a></li>
-<li>Książka w wersji polskiej (1 edycja): <a href="https://git-scm.com/book/pl/v1">https://git-scm.com/book/pl/v1</a></li>
-<li>Online tutorial z częsci komend:<a href="https://learngitbranching.js.org/">https://learngitbranching.js.org/</a></li>
-</ul>
-
+<h3 id="Rozmieszczanie-wid&#380;et&#243;w">Rozmieszczanie wid&#380;et&#243;w<a class="anchor-link" href="#Rozmieszczanie-wid&#380;et&#243;w">&#182;</a></h3>
 </div>
 </div>
-</div></section></section><section><section>
+</div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Na pierwszych zajęciach:</p>
+<p>Rsyowanie widżetu odbywa się za pomocą jednej z trzech metod: <code>grid</code> (ułóż na siatce), <code>pack</code> (upchnij), <code>place</code> (umieść) i te nazwy bardzo dobrze opisują sposób rozmieszczenia obiektu:</p>
 <ul>
-<li>forkujemy repo: <a href="https://github.com/sucharinio/pw_pwzn_z2019">https://github.com/sucharinio/pw_pwzn_z2019</a> (czyli tworzymy własną zdalną kopię repozytorium)</li>
-<li>clonujemy repo (czyli ściągamy je lokalnie)</li>
-<li>ustawiamy dane edytora:
-<pre><code>$ git config --global user.name "Jan Nowak"
-$ git config --global user.email jannowak@example.com</code></pre>
-</li>
+<li><code>grid</code> - zakłada że widżet można umieścić w którejść komórce macierzy (domyślnie w pierwszej kolumnie w kolenych wierszach). Istnieje możliwość rozciągania obiektu między kilka komórek (<code>span</code>).</li>
+<li><code>pack</code> - dodaje elemnty kolejno w zadanym kierunku (<code>side</code>, domyślnie od góry do dołu).</li>
+<li><code>place</code> - doadaje widżet w dokładnie określonym miejscu (stosować tylko w przypadku umieszczania elementu w konkretnym miejscu).</li>
 </ul>
 
 </div>
 </div>
-</div></section></section><section><section>
+</div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Na każdych zajęciach:</p>
+<p><strong>UWAGA</strong>: Używając geometrii siatki, nie można już umieszczać elemnetów przez upychanie i odwrotnie!</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">tkinter</span> <span class="k">as</span> <span class="nn">tk</span>
+
+<span class="k">class</span> <span class="nc">MixedGeometryFrame</span><span class="p">(</span><span class="n">tk</span><span class="o">.</span><span class="n">Frame</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+        <span class="c1"># główne okno aplikacji</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">tk</span><span class="o">.</span><span class="n">BOTH</span><span class="p">)</span>
+        
+        <span class="c1"># okno rysowane przez upychanie</span>
+        <span class="n">f1</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Frame</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">f1</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">tk</span><span class="o">.</span><span class="n">TOP</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">tk</span><span class="o">.</span><span class="n">BOTH</span><span class="p">)</span>
+        <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Red&quot;</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="s2">&quot;red&quot;</span><span class="p">,</span> <span class="n">fg</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="n">tk</span><span class="o">.</span><span class="n">X</span><span class="p">)</span>
+        <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Green&quot;</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="s2">&quot;green&quot;</span><span class="p">,</span> <span class="n">fg</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="n">tk</span><span class="o">.</span><span class="n">X</span><span class="p">)</span>
+        <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Blue&quot;</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span> <span class="n">fg</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">fill</span><span class="o">=</span><span class="n">tk</span><span class="o">.</span><span class="n">X</span><span class="p">)</span>
+        
+        <span class="c1"># okno rysowane na siatce</span>
+        <span class="n">f2</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Frame</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="n">f2</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">tk</span><span class="o">.</span><span class="n">BOTTOM</span><span class="p">)</span>
+        <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">f2</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;First&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">tk</span><span class="o">.</span><span class="n">W</span><span class="p">)</span>
+        <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">f2</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Second&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">tk</span><span class="o">.</span><span class="n">W</span><span class="p">)</span>
+
+        <span class="n">e1</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Entry</span><span class="p">(</span><span class="n">f2</span><span class="p">)</span>
+        <span class="n">e2</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Entry</span><span class="p">(</span><span class="n">f2</span><span class="p">)</span>
+        <span class="n">e1</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">e2</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        
+<span class="n">MixedGeometryFrame</span><span class="p">()</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Zdarzenia-w-aplikacji">Zdarzenia w aplikacji<a class="anchor-link" href="#Zdarzenia-w-aplikacji">&#182;</a></h3>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Zdarzenia-uruchamiane-przez-wid&#380;et">Zdarzenia uruchamiane przez wid&#380;et<a class="anchor-link" href="#Zdarzenia-uruchamiane-przez-wid&#380;et">&#182;</a></h4>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Część widżetów może mieć zdefiniowaną akcję, w momencie wejścia w interakcję z nim (wciśnięcie przycisku, przesunięcie suwaka, itp.). Funkcję te definiujemy w parametrze <code>command</code> widżetu.</p>
+<p><strong>UWAGA</strong> Przypisujemy funkcję, nie wywołanie funkcji!</p>
+<p><strong>UWAGA 2</strong> Ponieważ przypisujemy funkcję, nie wywołanie, jeżeli chcemy do funkcji przekazać niezwiązane z Tkinterem paramtry, musimy to zrobić przypisując "funkcję" do parametru <code>command</code>. Parametry takie możemy zdefiniować za pomocą funckji <code>functools.partial</code>.</p>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Kontrolki">Kontrolki<a class="anchor-link" href="#Kontrolki">&#182;</a></h4>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Tkinter posiada kontrolki (<em>control variable</em>), które rozszerzają funckjonalność zwykłej zmiennej o możliwość powiązania jej stanu z widżetem. Powiązanie to jest relaizowane za pomocą gettera i settera, który odpowiednio pozwala na pobranie obecnej wartości z widżetu lub nadpisanie wartości kontrolki przez widżet.</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Powiązanie może odbywać się również na zmianie wartości kontrolki. Możliwymi zdarzeniami są:</p>
 <ul>
-<li>(opcjonalnie) przechodzimy na branch do którego chcemy domergować nowe zadania.<br/>
-<code>$ git checkout master</code></li>
-<li>Ściągamy zmiany ze zdalnego repozytorium:<br/>
-<code>$ git pull https://github.com/sucharinio/pw_pwzn_z2019.git master</code></li>
-<li>Rozwiązujemy potencjalne konflikty i mergujemy zmiany.</li>
-<li>Rozwiązujemy zadania, zapisujemy zmiany.<br/>
-<pre><code>git add .
-git commmit -m "Solution lab n."</code></pre>
-</li>
-<li>Updatujemy swoje zdalne repo o zmiany:<br/>
-<code>$ git push origin master</code></li>
+<li>odczyt (<code>r</code>),</li>
+<li>zapis (<code>w</code>),</li>
+<li>usunięcie(<code>u</code>).</li>
 </ul>
 
 </div>
 </div>
-</div></section></section>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">tkinter</span> <span class="k">as</span> <span class="nn">tk</span>
+
+<span class="n">root</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Frame</span><span class="p">()</span>
+<span class="n">root</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="n">my_variable</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">StringVar</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">trace_when_my_variable_written</span><span class="p">(</span><span class="o">*</span><span class="n">_</span><span class="p">):</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="n">f</span><span class="s2">&quot;Traced variable {my_variable.get()}&quot;</span><span class="p">)</span>
+
+    
+<span class="c1"># Podłączenie funckji do zmiennej - tzw. obserwator</span>
+<span class="n">my_variable</span><span class="o">.</span><span class="n">trace_variable</span><span class="p">(</span><span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">trace_when_my_variable_written</span><span class="p">)</span>
+
+<span class="c1"># Powiązanie kontrolki</span>
+<span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">textvariable</span> <span class="o">=</span> <span class="n">my_variable</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">padx</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">tk</span><span class="o">.</span><span class="n">Entry</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="n">textvariable</span> <span class="o">=</span> <span class="n">my_variable</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">padx</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">pady</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Zdarzenia-pochodz&#261;ce-z-peryferi&#243;w">Zdarzenia pochodz&#261;ce z peryferi&#243;w<a class="anchor-link" href="#Zdarzenia-pochodz&#261;ce-z-peryferi&#243;w">&#182;</a></h4>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Przez peryferia określa się np. klawiaturę i myszkę. Zdarzenia (<em>event</em>) od nich pochodzące (wciśnięcie przycisku na klawiaturze, najechanie kursorem) można przypisać (<em>bind</em>) do funkcji wykonującej (<em>handlera</em>) na trzy sposoby:</p>
+<ul>
+<li>do widżetu <code>canv.bind('&lt;Button-2&gt;', _drawOrangeBlob)</code></li>
+<li>do klasy widzetów <code>frame.bind_class('&lt;Button-2&gt;', _drawOrangeBlob)</code></li>
+<li>na poziomie aplikacji <code>window.bind('&lt;Key-Print&gt;', _printScreen)</code></li>
+</ul>
+<p>Gdzie:</p>
+<ul>
+<li><code>canv</code>, <code>frame</code>, <code>window</code> to widżety,</li>
+<li><code>_drawOrangeBlob</code>, <code>_printScreen</code> to nazwy przypisywanych funkcji,</li>
+<li><code>&lt;Button-2&gt;</code>, <code>&lt;Key-Print&gt;</code> przechwytywane zmienne</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">tkinter</span> <span class="k">as</span> <span class="nn">tk</span>
+
+<span class="k">def</span> <span class="nf">key</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;pressed&quot;</span><span class="p">,</span> <span class="nb">repr</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">char</span><span class="p">))</span>
+
+<span class="k">def</span> <span class="nf">callback</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+    <span class="n">frame</span><span class="o">.</span><span class="n">focus_set</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;clicked at&quot;</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">event</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+
+<span class="n">frame</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Frame</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">frame</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;Key&gt;&quot;</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+<span class="n">frame</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;&lt;Button-1&gt;&quot;</span><span class="p">,</span> <span class="n">callback</span><span class="p">)</span>
+<span class="n">frame</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+<span class="n">frame</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Stylowanie-wid&#380;et&#243;w">Stylowanie wid&#380;et&#243;w<a class="anchor-link" href="#Stylowanie-wid&#380;et&#243;w">&#182;</a></h3>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Możliew są dwa podejścia do zmieniania stylizacji widżetów:</p>
+<ul>
+<li>podając atrybuty do widżetów (np. <code>fg</code> oznaczający kolor czcionki) z głównego modułu <code>tkinter</code>,</li>
+<li>Korzystać z widżetów zdefiniowanych w podmodule <code>tkinter.ttk</code>, w których zamiast atrybutów definiuje się obiekt stylu, który nadaje się widżetowi. W tym przypadku widżety nie mają atrybutów odpowiadających za stylowanie.</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">tkinter</span> <span class="k">as</span> <span class="nn">tk</span>
+
+<span class="n">frame</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Frame</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Test&quot;</span><span class="p">,</span> <span class="n">fg</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Test&quot;</span><span class="p">,</span> <span class="n">fg</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="n">frame</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+<span class="n">frame</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div></div><div class="fragment">
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">tkinter</span> <span class="k">import</span> <span class="n">ttk</span>
+
+<span class="c1"># Obiekt stylu</span>
+<span class="n">style</span> <span class="o">=</span> <span class="n">ttk</span><span class="o">.</span><span class="n">Style</span><span class="p">()</span>
+<span class="n">style</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="s2">&quot;BW.TLabel&quot;</span><span class="p">,</span> <span class="n">foreground</span><span class="o">=</span><span class="s2">&quot;black&quot;</span><span class="p">,</span> <span class="n">background</span><span class="o">=</span><span class="s2">&quot;white&quot;</span><span class="p">)</span>
+
+<span class="n">frame</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Frame</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">frame</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="n">ttk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Test&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;BW.TLabel&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="n">ttk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">frame</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Test&quot;</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s2">&quot;BW.TLabel&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+<span class="n">frame</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Osadzanie-wykresu">Osadzanie wykresu<a class="anchor-link" href="#Osadzanie-wykresu">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">tkinter</span> <span class="k">as</span> <span class="nn">tk</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib.backends.backend_tkagg</span> <span class="k">import</span> <span class="p">(</span>
+    <span class="n">FigureCanvasTkAgg</span><span class="p">,</span> 
+    <span class="n">NavigationToolbar2Tk</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="c1"># Domyślne przypisanie przycisków do wykresu</span>
+<span class="kn">from</span> <span class="nn">matplotlib.backend_bases</span> <span class="k">import</span> <span class="n">key_press_handler</span>
+
+
+<span class="n">root</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Frame</span><span class="p">()</span>
+<span class="n">root</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+
+<span class="c1"># Standardowe rysowanie wykresu</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">.</span><span class="mi">01</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">x</span><span class="p">))</span>
+
+<span class="c1">#  Stworzenie obszaru rysowania</span>
+<span class="n">canvas</span> <span class="o">=</span> <span class="n">FigureCanvasTkAgg</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="n">master</span><span class="o">=</span><span class="n">root</span><span class="p">)</span>
+<span class="n">canvas_widget</span> <span class="o">=</span> <span class="n">canvas</span><span class="o">.</span><span class="n">get_tk_widget</span><span class="p">()</span>
+<span class="n">canvas</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
+<span class="n">canvas_widget</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">tk</span><span class="o">.</span><span class="n">TOP</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">tk</span><span class="o">.</span><span class="n">BOTH</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">toolbar</span> <span class="o">=</span> <span class="n">NavigationToolbar2Tk</span><span class="p">(</span><span class="n">canvas</span><span class="p">,</span> <span class="n">root</span><span class="p">)</span>
+<span class="n">toolbar</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+<span class="n">canvas_widget</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">tk</span><span class="o">.</span><span class="n">TOP</span><span class="p">,</span> <span class="n">fill</span><span class="o">=</span><span class="n">tk</span><span class="o">.</span><span class="n">BOTH</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Połączenie zdarzenia wciśnięcia przycisku klawiatury z wykresem</span>
+<span class="k">def</span> <span class="nf">on_key_press</span><span class="p">(</span><span class="n">event</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;you pressed </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">key</span><span class="p">))</span>
+    <span class="n">key_press_handler</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">canvas</span><span class="p">,</span> <span class="n">toolbar</span><span class="p">)</span>
+
+
+<span class="n">canvas</span><span class="o">.</span><span class="n">mpl_connect</span><span class="p">(</span><span class="s2">&quot;key_press_event&quot;</span><span class="p">,</span> <span class="n">on_key_press</span><span class="p">)</span>
+
+<span class="n">button</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">master</span><span class="o">=</span><span class="n">root</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Quit&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">root</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">destroy</span><span class="p">)</span>
+<span class="n">button</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">tk</span><span class="o">.</span><span class="n">BOTTOM</span><span class="p">)</span>
+
+<span class="n">root</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Embedding in Tk&quot;</span><span class="p">)</span>
+<span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Problemy-z-obrazkami">Problemy z obrazkami<a class="anchor-link" href="#Problemy-z-obrazkami">&#182;</a></h3>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Moduł domyślnie posiada dwie klasy do wyświetlania obrazu:</p>
+<ul>
+<li><code>tk.BitmapImage</code> wspierający format <code>.xbm</code> (<em>X BitMap</em>),</li>
+<li><code>tk.PhotoImage</code> wspierający formaty <code>.gif</code>, <code>.pgm</code> (<em>Portable GrayMap</em>) i <code>ppm</code> (<em>Portable PixleMap</em>),
+które nie są aż tak popularnymi formatami.</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>W celu wykorzystania grafiki w innym formacie niż powyższe, musimy skorzystać z modułu PIL (<em>Python Imaging Library</em>), który obecnie rozwijany jest pod nazwą <em>Pillow</em> (który to projekt jest forkiem od PIL...).</p>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Instalacja: <code>pip install Pillow</code></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="k">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">ImageTk</span>
+<span class="kn">import</span> <span class="nn">tkinter</span> <span class="k">as</span> <span class="nn">tk</span>
+
+<span class="k">class</span> <span class="nc">Example</span><span class="p">(</span><span class="n">tk</span><span class="o">.</span><span class="n">Frame</span><span class="p">):</span>
+  
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>   
+         
+        <span class="bp">self</span><span class="o">.</span><span class="n">load_image</span><span class="p">()</span> 
+        <span class="bp">self</span><span class="o">.</span><span class="n">init_ui</span><span class="p">()</span>
+        
+        
+    <span class="k">def</span> <span class="nf">load_image</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;images/matplotlib_gig_parts.png&quot;</span><span class="p">)</span>
+        <span class="k">except</span> <span class="ne">IOError</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Unable to load image&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">destroy</span><span class="p">()</span>
+    
+    <span class="k">def</span> <span class="nf">init_ui</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      
+        <span class="bp">self</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Label&quot;</span><span class="p">)</span>
+        
+        <span class="n">tatras</span> <span class="o">=</span> <span class="n">ImageTk</span><span class="o">.</span><span class="n">PhotoImage</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">img</span><span class="p">)</span>
+        <span class="n">label</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">tatras</span><span class="p">)</span>
+        <span class="c1"># UWAGA: referencja do obrazka musi być dodana jawnie </span>
+        <span class="n">label</span><span class="o">.</span><span class="n">image</span> <span class="o">=</span> <span class="n">tatras</span>
+        
+        <span class="n">label</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+        
+<span class="n">ex</span> <span class="o">=</span> <span class="n">Example</span><span class="p">()</span>
+<span class="n">ex</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="n">ex</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div></div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="&#377;r&#243;d&#322;a">&#377;r&#243;d&#322;a<a class="anchor-link" href="#&#377;r&#243;d&#322;a">&#182;</a></h2>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><a href="https://pl.wikipedia.org/wiki/Model-View-Controller">MVC - Wikipedia</a></li>
+<li><a href="https://docs.python.org/3/library/tkinter.html#module-tkinter">Dokumentacja modułu</a></li>
+<li><a href="http://effbot.org/tkinterbook/">Tkinterbook</a></li>
+<li><a href="https://web.archive.org/web/20190510060459/http://infohost.nmt.edu/tcc/help/pubs/tkinter/web/index.html">Tkinter 8.5 reference</a></li>
+<li><a href="https://subscription.packtpub.com/book/application_development/9781785889738"><em>Tkinter GUI Application Development Blueprints</em>, Bhaskar Chaudhary, 2015 PACKT</a></li>
+<li><a href="https://matplotlib.org/3.1.0/gallery/user_interfaces/embedding_in_tk_sgskip.html">Zagnieżdżanie wykresu</a></li>
+</ul>
+
+</div>
+</div>
+</div></div></section></section>
 </div>
 </div>
 

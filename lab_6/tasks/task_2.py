@@ -1,9 +1,16 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 63f9fa774c4cff719d542ef7d5a2f1ccbc5ab9ea
 """
 Na (1 pkt.):
 Napisz program do sprawdzenia poprawności skompresowanego wyjścia poprzedniej
 funkcji.
 Funkcja MUSI w swej implementacji korzystać z wyrażeń regularnych.
+<<<<<<< HEAD
+=======
+
+>>>>>>> 63f9fa774c4cff719d542ef7d5a2f1ccbc5ab9ea
 Funkcja na wejściu przyjmuje nazwę pliku do sprawdzenia, na wyjściu zwraca
 dwuelementową tuplę zawierającą liczbę poprawnych wierszy:
 - na indeksie 0 płeć F
@@ -13,6 +20,7 @@ import re
 
 
 def check_animal_list(file_path):
+<<<<<<< HEAD
     female_correct = 0
     male_correct = 0
     header = True
@@ -33,9 +41,15 @@ def check_animal_list(file_path):
                 female_correct = female_correct + 1
 
     return female_correct, male_correct
+=======
+    pass
+>>>>>>> 63f9fa774c4cff719d542ef7d5a2f1ccbc5ab9ea
 
 
 if __name__ == '__main__':
     assert check_animal_list('s_animals_sce.txt') == (2, 2)
     assert check_animal_list('animals_sc_corrupted.txt') == (5, 0)
+<<<<<<< HEAD
     pass
+=======
+>>>>>>> 63f9fa774c4cff719d542ef7d5a2f1ccbc5ab9ea

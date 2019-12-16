@@ -34,6 +34,7 @@ Otrzymuje się wtedy 2 pkt.
 UWAGA 2: Wszystkie jednoski masy występują w przykładzie.
 """
 from pathlib import Path
+<<<<<<< HEAD
 import pandas as pd
 
 
@@ -71,6 +72,12 @@ def select_animals(input_path, output_path, compressed=False):
     else:
         smallest_animals.to_csv(output_path, index=False, columns=['id', 'mass',
                                                                'genus', 'name', 'gender'])
+=======
+
+
+def select_animals(input_path, output_path, compressed=False):
+    pass
+>>>>>>> 63f9fa774c4cff719d542ef7d5a2f1ccbc5ab9ea
 
 
 if __name__ == '__main__':
@@ -86,5 +93,8 @@ if __name__ == '__main__':
     with open(output_path) as generated:
         with open('s_animals_sce.txt') as expected:
             assert generated.read() == expected.read()
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 63f9fa774c4cff719d542ef7d5a2f1ccbc5ab9ea
