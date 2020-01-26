@@ -1,25 +1,41 @@
 import numpy as np
 
-
+# zadania maja byc wykonane na nowym interpreterze z zainstalowanym tylko numpy
+# po rozwiazaniu nalezy wygenerowac plik requirements i zacommitowac wszystko na gita
 def least_sq(xy):
     """
     Fits linear function to given vector of 2D points.
-
     Funkcja liczy parametry funkcji liniowej ax+b do danych za pomocą metody
     najmniejszych kwadratów.
     (1 pkt.)
-
     A = (N*Sum(xy)-Sum(x)*Sum(y))/Delta
     B = (Sum(x^2)*Sum(y)-Sum(x)*Sum(xy))/Delta
     Delta = N*Sum(x^2) - (Sum(x)^2)
-
     :param xy: vector of 2D points (shape (2, n))
     :type xy: np.ndarray
     :return: Tuple of fitted parameters
     """
-    pass
+
+    x = xy[0]
+    y = xy[1]
+    x_sq = xy[0]*xy[0]
+    y_sq = xy[1]*xy[1]
+    x_times_y = xy[0]*xy[1]
+    N = x.shape[0]
+    delta = (N*sum(x_sq)) - ((sum(x))*(sum(x)))
+    A = ((sum(x_sq)*sum(y)) - (sum(x)*sum(x_times_y))) / delta
+    B = ((N*sum(x_times_y)) - (sum(x)*sum(y))) / delta
+
+    return A, B
 
 
+
+
+
+
+
+# wazne: program ma dzialac dla dowolnego N
+# ważne2: robic na mnozeniu macierzowym
 if __name__ == '__main__':
     points = np.array([[0.008631342087986165,
                         1.0008364249814004,
@@ -221,4 +237,4 @@ if __name__ == '__main__':
                         98.00343145869182,
                         98.9982680433363,
                         100.00083927400149]])
-    np.testing.assert_allclose(least_sq(points), (1, -1), atol=0.1)
+    np.testing.assert_allclose(least_sq(points), (1, 1), atol=0.1)

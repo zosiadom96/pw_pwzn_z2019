@@ -1,3 +1,4 @@
+
 """
 Częśćć 1 (1 pkt): Uzupełnij klasę Vector tak by reprezentowała wielowymiarowy wektor.
 Klasa posiada przeładowane operatory równości, dodawania, odejmowania,
@@ -9,23 +10,30 @@ oraz metodę fabryki korzystającą z metody statycznej tworzącej nowy wektor
 z dwóch punktów.
 Wszystkie metody sprawdzają wymiar.
 """
-
+from math import sqrt
 
 class Vector:
-    dim = None  # Wymiar vectora
+
+    _dim = None  # Wymiar vectora
+    def __init__(self, *args):
+        self.vec = tuple(args)
+        self._dim = len(args)
+        #print("aaaaaa kotki 2")
+
+    @property
+    def dim(self):
+        return self._dim
 
     @property
     def len(self):
-        raise NotImplemented
-
-    def __init__(self, *args):
-        raise NotImplemented
+        leng = sum(dimension*dimension for dimension in self.vec)
+        leng = sqrt(leng)
+        return leng
 
     @staticmethod
     def calculate_vector(beg, end):
         """
         Calculate vector from given points
-
         :param beg: Begging point
         :type beg: list, tuple
         :param end: End point
@@ -33,14 +41,14 @@ class Vector:
         :return: Calculated vector
         :rtype: tuple
         """
-        raise NotImplemented
+        new_vec = tuple(dos-uno for uno, dos in zip(beg, end))
+        return new_vec
 
     @classmethod
     def from_points(cls, beg, end):
         """"""
         """
         Generate vector from given points.
-
         :param beg: Begging point
         :type beg: list, tuple
         :param end: End point
@@ -48,7 +56,53 @@ class Vector:
         :return: New vector
         :rtype: tuple
         """
-        raise NotImplemented
+        if len(beg)==len(end):
+            brand_new_vec = cls.calculate_vector(beg, end)
+            return cls(*brand_new_vec)
+        else:
+            raise ValueError("Wrong Dimensions!")
+
+    def __len__(self):
+        return len(self.vec)
+
+    def __add__(self, other):
+        if isinstance(other,self.__class__):
+            if other._dim == self._dim:
+                result = [o+s for o,s in zip(other.vec,self.vec)]
+                return Vector(*result)
+            else:
+                raise ValueError("Wrong Dimensions!")
+        else:
+            raise NotImplemented
+
+    def __sub__(self, other):
+        if isinstance(other,self.__class__):
+            if other._dim == self._dim:
+                result = [o-s for o,s in zip(other.vec,self.vec)]
+                return Vector(*result)
+            else:
+                raise ValueError("Wrong Dimensions!")
+        else:
+            raise NotImplemented
+
+    def __mul__(self, other):
+        if isinstance(other,self.__class__):
+            if other._dim == self._dim:
+                result = sum(o*s for o,s in zip(other.vec,self.vec))
+                return result
+            else:
+                raise ValueError("Wrong Dimensions!")
+        if isinstance(other,int):
+            result = [other*s for s in self.vec]
+            return Vector(*result)
+        else:
+            raise NotImplemented
+
+    def __eq__(self, other):
+        if isinstance(other,self.__class__):
+            return other.vec == self.vec
+        else:
+            raise NotImplemented
 
 
 if __name__ == '__main__':

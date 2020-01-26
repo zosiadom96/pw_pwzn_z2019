@@ -1,7 +1,7 @@
+
 def check_frequency(input):
     """
     Perform counting based on input queries and return queries result.
-
     Na wejściu otrzymujemy parę liczb całkowitych - operacja, wartość.
     Możliwe operacje:
     1, x: zlicz x
@@ -10,13 +10,28 @@ def check_frequency(input):
     Do parsowania wejścia wykorzystaj funkcję parse_input.
     Po wejściu (już jakoliście) iterujemy tylko raz (jedna pętla).
     Zbiór danych zrealizuj za pomocą struktury z collections.
-
     :param input: pairs of int: command, value
     :type input: string
     :return: list of integers with results of operation 3
     :rtype: list
     """
-    pass
+
+# hint collections, jedna pętla
+    from collections import Counter
+    from task_1 import parse_input
+
+    commands = parse_input(input)
+    numbers = Counter()
+    frequency = []
+    for command, value in commands:
+        if command == 1:
+            numbers[value] += 1
+        elif command == 2:
+            n = numbers[value]
+            numbers[value] = n-1 if n > 0 else 0
+        elif command == 3:
+            frequency.append(numbers[value])
+    return frequency
 
 
 _input = """
@@ -29,8 +44,6 @@ _input = """
 1 6
 2 5
 3 2
-
-
 """
 if __name__ == '__main__':
     assert check_frequency(_input) == [0, 1]
