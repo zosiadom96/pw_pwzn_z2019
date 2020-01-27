@@ -1,22 +1,31 @@
 import math
 import itertools
-import sys
 from collections import Counter
+import os
+import pandas as pd
+from collections import defaultdict
 
 
-#fileName=sys.argv[1]
+directory=input("Enter input file name")
+directory2=input("Enter output file name")
+d=defaultdict()
 
-d = {}
-with open("file.txt") as f:
 
-    for line in f:
-       (key, val) = line.split()
-       d[key] = int(val)
+def read_data(directory):
 
-mandaty_partii = Counter(d)
+
+    if not os.path.isfile(directory):
+        raise ValueError("No file")
+
+    if not directory[-3:] == 'csv':
+        raise ValueError("No csv")
+    
+    x=pd.read_csv(directory,sep=";", header=None)    
+    for i in x.values:
+        d[i[0]] = i[1]
+    return d
 
 #mandaty_partii = Counter({'a':49, 'b':37, 'c':38, 'd':34, 'e':15, 'f':12, 'g':9, 'h':5, 'i':1})
-
 
 def zsumuj_glosy_koalicji(mandaty_partii, czlonkowie_koalicji):
     return sum(mandaty_partii[partia] for partia in czlonkowie_koalicji)
@@ -68,9 +77,12 @@ def przelicz_jednostke(mandaty_partii):
     
     return b_p_index
 
-print("Banzhaf power index is a power index defined by the probability of changing an outcome of a vote where voting rights are not necessarily equally divided among \nthe voters or shareholders. To calculate the power of a voter using the Banzhaf index, list all the winning coalitions, then count the critical voters. A critical \nvoter is a voter who, if he changed his vote from yes to no, would cause the measure to fail. [Source: Wikipedia] \nCalculated values:",file=open("output.txt","w"))
+print("Banzhaf power index is a power index defined by the probability of changing an outcome of a vote where voting rights are not necessarily equally divided among \nthe voters or shareholders. To calculate the power of a voter using the Banzhaf index, list all the winning coalitions, then count the critical voters. A critical \nvoter is a voter who, if he changed his vote from yes to no, would cause the measure to fail. [Source: Wikipedia] \nCalculated values:",file=open(directory2,"w"))
 
+read_data(directory)
+mandaty_partii=Counter(d)
+print(mandaty_partii)
 przelicz_jednostke(mandaty_partii).keys()
 for key, value in przelicz_jednostke(mandaty_partii).items():
-    print(key, value, file=open("output.txt","a"))
+    print(key, value, file=open(directory2,"a"))
 

@@ -1,0 +1,7 @@
+Banzhaf power index is a power index defined by the probability of changing an outcome of a vote where voting rights are not necessarily equally divided among 
+the voters or shareholders. To calculate the power of a voter using the Banzhaf index, list all the winning coalitions, then count the critical voters. A critical 
+voter is a voter who, if he changed his vote from yes to no, would cause the measure to fail. [Source: Wikipedia] 
+Calculated values:
+a 0.0
+b 0.0
+c 1.0

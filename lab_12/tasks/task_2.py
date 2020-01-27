@@ -4,8 +4,24 @@ from time import time
 
 
 def log_run(fun):
-    pass
-
+    @wraps(fun)
+    def wrapper(*args, **kwargs):
+        now = datetime.now()
+        dt_string = now.strftime("%Y/%m/%dT%H:%M:%S")
+        start = time()
+        ret = fun(*args, **kwargs)
+        end = time()
+        elapsed = "%.2es" % (end-start)
+        klucze = ""
+        for ke in kwargs.keys():
+            klucze += ke + " " 
+        if klucze == "": klucze = "-"
+        print(f"""{dt_string}| function {fun.__name__} called with:
+{len(args)} postional parameters
+optional parameters: {klucze}
+returned: {ret} ({elapsed})""")
+        return ret
+    return wrapper
 
 @log_run
 def fun(*args, **kwargs):
