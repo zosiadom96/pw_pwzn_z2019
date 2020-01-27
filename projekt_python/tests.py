@@ -12,12 +12,6 @@ from wybory_euro import read_data
 from collections import Counter
 
 
-'''
-@mock.patch('data.os.path.isfile', return_value=True)
-def test_read_data_bad_extension(_):
-    with pytest.raises(ValueError):
-        open("file.txt")
-'''
 
 def test_przelicz_jednostke():
     mandaty_partii = Counter({'a':49, 'b':37, 'c':1})

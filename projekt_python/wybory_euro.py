@@ -16,9 +16,6 @@ def read_data(directory):
 
     if not os.path.isfile(directory):
         raise ValueError("No file")
-
-    if not directory[-3:] == 'csv':
-        raise ValueError("No csv")
     
     x=pd.read_csv(directory,sep=";", header=None)    
     for i in x.values:
